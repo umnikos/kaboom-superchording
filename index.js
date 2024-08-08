@@ -822,6 +822,8 @@ function newGame(event) {
   game.mount(gameElement);
   updateSettings();
   updateSize();
+
+  game.resetSuperchording();
 }
 
 function updateSize() {

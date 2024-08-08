@@ -1,12 +1,3 @@
-// ==UserScript==
-// @name        Kaboom superchording
-// @namespace   Kaboom
-// @match       https://pwmarcz.pl/kaboom/
-// @grant       none
-// @version     0.6
-// @author      umnikos
-// ==/UserScript==
-
 // PROBLEM: left clicking on every number 2^i times in advanced mode solves all boards if the resolution system is a sat solver
 // and if it is not then it's unclear if all logical deductions can be expressed with a weaker resolver
 // POSSIBLE RESOLUTIONS:
@@ -128,7 +119,7 @@ function new_chordAround(my_neighbors, value, n) {
     }
   }
 
-  debugger;
+  //debugger;
   if (n == 0 && blackcounts.length > 0 && whitecounts.length > 0) {
     return;
   }
