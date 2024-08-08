@@ -190,6 +190,8 @@ class Game {
 
     this.recalc();
     this.refresh();
+
+    this.resetSuperchording();
   }
 
   hint() {
