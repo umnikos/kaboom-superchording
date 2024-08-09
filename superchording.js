@@ -149,6 +149,10 @@ function new_chordAround(my_neighbors, value, n) {
     this.__proto__.superchording.dots.set(x0 + "," + y0, current_dot+increment);
   }
 
+  if (n == 0 && this.__proto__.superchording.sum < 0) {
+    this.__proto__.superchording = this.negateDots();
+  }
+
   this.refreshMana();
   this.refreshChording();
   if (n == 0) {
