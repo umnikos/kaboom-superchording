@@ -40,7 +40,7 @@ function new_cellClick(e, x, y) {
         } else {
           this.chordAroundCell(x,y,0);
         }
-        if (!this.solver.hasSafeCells()) {
+        if (this.unsafeMode || !this.solver.hasSafeCells()) {
             this.reveal(x,y);
         }
       break;
