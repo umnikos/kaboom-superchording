@@ -27,7 +27,7 @@ class Game {
     this.state = State.PLAYING;
 
     this.debug = false;
-    this.allowOutside = false;
+    this.allowOutside = true;
     this.safeMode = false;
     this.unsafeMode = false;
     this.countdownMode = false;
@@ -866,7 +866,7 @@ function undo() {
   game.undo();
 }
 
-const SETTINGS = ['debug', 'allowOutside', 'unsafeMode', 'countdownMode'];
+const SETTINGS = ['debug', 'unsafeMode', 'countdownMode'];
 
 function updateSettings() {
   for (const name of SETTINGS) {
