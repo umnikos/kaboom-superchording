@@ -23,6 +23,7 @@ function addGlobalStyle(css) {
 }
 
 function makeStyle() {
+  addGlobalStyle('.cell.chord-label { font-family: sans-serif }')
   addGlobalStyle('.cell.label-plus::after  { content:  "☉"; }');
   addGlobalStyle('.cell.label-minus::after  { content:  "🝰"; }');
   addGlobalStyle('.cell.label-high-plus::after  { content:  "⊛"; }');
@@ -181,20 +182,21 @@ function new_refreshChording() {
   for (const [coords, value] of this.__proto__.superchording.dots.entries()) {
     let [x0,y0] = coords.split(",").map(Number);
     if (value < -1) {
-      this.cells[y0][x0].className = "cell unknown label-low-minus";
+      this.cells[y0][x0].className = "label-low-minus";
     }
     if (value === -1) {
-      this.cells[y0][x0].className = "cell unknown label-minus";
+      this.cells[y0][x0].className = "label-minus";
     }
     if (value === 0) {
-      this.cells[y0][x0].className = "cell unknown";
+      this.cells[y0][x0].className = "";
     }
     if (value === 1) {
-      this.cells[y0][x0].className = "cell unknown label-plus";
+      this.cells[y0][x0].className = "label-plus";
     }
     if (value > 1) {
-      this.cells[y0][x0].className = "cell unknown label-high-plus";
+      this.cells[y0][x0].className = "label-high-plus";
     }
+    this.cells[y0][x0].className = "cell unknown chord-label " + this.cells[y0][x0].className
   }
 }
 
